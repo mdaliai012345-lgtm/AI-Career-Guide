@@ -1,5 +1,17 @@
-from career_database import careerinfo
+import mysql.connector
 from ai_explanation import get_ai_advice
+
+# Database connection
+db = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="blackroom",
+    database="career_guidance"
+)
+cursor = db.cursor(dictionary=True)
+cursor.execute("SELECT * FROM careers")
+careerinfo = cursor.fetchall()
+
 
 user = input("Enter your name: ").upper()
 usered = input("Enter your Education level: ").upper()
@@ -29,39 +41,39 @@ career_score = []
 for career in careerinfo:
     score = 0
 
-    if information["Interest"] in career["Interest"]:
+    if information["Interest"] in career["interest"]:
         score += 1
 
-    if information["Favorite Subject"] in career["Subject"]:
+    if information["Favorite Subject"] in career["subject"]:
         score += 1
 
-    if information["Education Level"] == career["Education Level"]:
+    if information["Education Level"] == career["education_level"]:
         score += 1
 
-    if information["Preferred Working Environment"] == career["Preferred Working Environment"]:
+    if information["Preferred Working Environment"] == career["preferred_working_environment"]:
         score += 1
 
-    if information["Percentage"] >= career["MINIMUM PERCENTAGE"]:
+    if information["Percentage"] >= career["minimum_percentage"]:
         score += 1
 
     for skill in information["Skills"]:
-        if skill in career["SKILLS"]:
+        if skill in career["skills"]:
             score += 1
     career_score.append((career, score))
 career_score.sort(key=lambda x: x[1], reverse=True)
 print("\n==== Top 3 Career Matches ====\n")
 for i, (career, score) in enumerate(career_score[:3], start=1):
-    print(f"{i}. {career['CAREER']} (Score: {score})")
+    print(f"{i}. {career['career']} (Score: {score})")
 
-    your_interest = career["Interest"]
-    skills_ = career["SKILLS"]
-    sub = career["Subject"]
-    ed = career["Education Level"]
-    st = career["STREAM"]
-    mark = career["MINIMUM PERCENTAGE"]
-    work = career["Preferred Working Environment"]
-    des = career["DESCRIPTION"]
-    edu = career["AFTER 12TH DEGREE"]
+    your_interest = career["interest"]
+    skills_ = career["skills"]
+    sub = career["subject"]
+    ed = career["education_level"]
+    st = career["stream"]
+    mark = career["minimum_percentage"]
+    work = career["preferred_working_environment"]
+    des = career["description"]
+    edu = career["after_12th_degree"]
        
 
    
@@ -71,7 +83,7 @@ for i, (career, score) in enumerate(career_score[:3], start=1):
     print("Subjects you need to focus on:", sub)
     print("Education Level Required:", ed)
     print("Education Level after 12th:",edu)
-    print("Entrance Exams Required:", career["ENTRANCE EXAMS"])
+    print("Entrance Exams Required:", career["entrance_exams"])
     print("Stream Required:", st)
     print("Minimum Percentage Required:", mark)
     print("Preferred Working Environment:", work)
@@ -90,20 +102,20 @@ with open("career_report.txt", "w") as file:
     file.write("")
     file.write(f"\n==== Top 3 Career Matches ====\n")
     for i, (career, score) in enumerate(career_score[:3], start=1):
-        file.write(f"{i}. {career['CAREER']} (Score: {score})\n")
-        file.write(f"Description: {career['DESCRIPTION']}\n")
-        file.write(f"Your Interest: {career['Interest']}\n")
-        file.write(f"Skills you need to develop: {career['SKILLS']}\n")
-        file.write(f"Subjects you need to focus on: {career['Subject']}\n")
-        file.write(f"Education Level Required: {career['Education Level']}\n")
-        file.write(f"Education Level after 12th: {career['AFTER 12TH DEGREE']}\n")
-        file.write(f"Entrance Exams Required: {career['ENTRANCE EXAMS']}\n")
-        file.write(f"Stream Required: {career['STREAM']}\n")
-        file.write(f"Minimum Percentage Required: {career['MINIMUM PERCENTAGE']}\n")
-        file.write(f"Preferred Working Environment: {career['Preferred Working Environment']}\n")
+        file.write(f"{i}. {career['career']} (Score: {score})\n")
+        file.write(f"Description: {career['description']}\n")
+        file.write(f"Your Interest: {career['interest']}\n")
+        file.write(f"Skills you need to develop: {career['skills']}\n")
+        file.write(f"Subjects you need to focus on: {career['subject']}\n")
+        file.write(f"Education Level Required: {career['education_level']}\n")
+        file.write(f"Education Level after 12th: {career['after_12th_degree']}\n")
+        file.write(f"Entrance Exams Required: {career['entrance_exams']}\n")
+        file.write(f"Stream Required: {career['stream']}\n")
+        file.write(f"Minimum Percentage Required: {career['minimum_percentage']}\n")
+        file.write(f"Preferred Working Environment: {career['preferred_working_environment']}\n")
         file.write("\n-----------------------------\n")
 file.close()
 best_career = career_score[0][0]
 print("\n===== AI Career Advice =====")
-advice = get_ai_advice(best_career["CAREER"])
+advice = get_ai_advice(best_career["career"])
 print(advice)
