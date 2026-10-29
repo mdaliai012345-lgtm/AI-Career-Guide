@@ -1,0 +1,46 @@
+===== USER INFORMATION =====
+Name: MOHD ALI
+Education Level: 12th
+Percentage: 70.5
+Interest: coding
+Favorite Subject: computer science
+Skills: python
+Preferred Working Environment: office
+
+==== Top 3 Career Matches ====
+1. SOFTWARE ENGINEER (Score: 4)
+Description: Designs, develops, tests, and maintains software applications and computer systems.
+Your Interest: PROGRAMMING, TECHNOLOGY, CODING
+Skills you need to develop: PYTHON, PROBLEM SOLVING, PROGRAMMING LANGUAGES
+Subjects you need to focus on: COMPUTER SCIENCE, MATHEMATICS, INFORMATION TECHNOLOGY
+Education Level Required: 12TH
+Education Level after 12th: B.TECH (CSE), B.E. COMPUTER ENGINEERING, BCA
+Entrance Exams Required: JEE MAIN, JEE ADVANCED, BITSAT, VITEEE, SRMJEEE
+Stream Required: SCIENCE
+Minimum Percentage Required: 75.00
+Preferred Working Environment: INDOORS
+-----------------------------
+2. GRAPHIC DESIGNER (Score: 4)
+Description: Creates logos, posters, and digital designs using creative software.
+Your Interest: ART, CREATIVITY, DESIGN
+Skills you need to develop: ADOBE PHOTOSHOP, CREATIVITY
+Subjects you need to focus on: ARTS, COMPUTER SCIENCE
+Education Level Required: 12TH
+Education Level after 12th: B.DES, BFA, B.SC GRAPHIC DESIGN
+Entrance Exams Required: UCEED, NID DAT, NIFT ENTRANCE, CUET
+Stream Required: ARTS, COMMERCE, SCIENCE
+Minimum Percentage Required: 55.00
+Preferred Working Environment: OFFICE
+-----------------------------
+3. CLOUD ENGINEER (Score: 4)
+Description: Designs and manages cloud computing infrastructure.
+Your Interest: CLOUD COMPUTING, TECHNOLOGY, NETWORKING
+Skills you need to develop: AWS, LINUX, PYTHON
+Subjects you need to focus on: COMPUTER SCIENCE, MATHEMATICS
+Education Level Required: 12TH
+Education Level after 12th: B.TECH CSE, BCA
+Entrance Exams Required: JEE MAIN, CUET
+Stream Required: SCIENCE
+Minimum Percentage Required: 70.00
+Preferred Working Environment: INDOORS
+-----------------------------
